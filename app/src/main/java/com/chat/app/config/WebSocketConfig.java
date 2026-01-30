@@ -12,8 +12,11 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
        registry.addEndpoint("/chat")
-               .setAllowedOrigins("http://localhost:5173")
+               .setAllowedOrigins("http://localhost:8080")
                .withSockJS();
+
+//       since we are using thymeleaf , the allowed origins will be 8080
+//       , if React was used then it would have been 5173
     }
 
     @Override
